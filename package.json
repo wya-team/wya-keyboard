@@ -16,7 +16,7 @@
         "dist": "cross-env MODE_ENV=build npm run prompt &&npm run clean && node --max_old_space_size=8192 ./node_modules/webpack/bin/webpack --config ./config/webpack.config.dist.js --color --progress",
         "build": "cross-env UGLIFY_JS=true npm run dist",
         "build:dev": "cross-env UGLIFY_JS=false npm run dist",
-        "lib": "npm run test && rm -rf ./lib && cross-env NODE_ENV=production babel src --out-dir lib --copy-files --ignore **.test.js,**.md,examples/** && npm publish --access public",
+        "pub": "bash config/publish.sh",
         "clean": "rm -rf ./dist ./demo",
         "lint": "esw ./config/*.config.* ./src",
         "lint:fix": "npm run lint -- --fix",
