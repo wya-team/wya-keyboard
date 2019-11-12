@@ -1,6 +1,6 @@
 {
     "name": "@wya/keyboard",
-    "version": "1.0.0",
+    "version": "1.0.0-alpha.1",
     "description": "@wya/keyboard for js",
     "main": "lib/index.js",
     "files": [
