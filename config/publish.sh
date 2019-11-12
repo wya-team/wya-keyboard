@@ -17,13 +17,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   npm run test && rm -rf ./lib
   cross-env NODE_ENV=production babel src --out-dir lib --copy-files --ignore **.test.js,**.md,examples/**
 
+  # version
+  npm version $VERSION --no-git-tag-version 
+
   # commit
   git add -A
   git commit -m "[build] v$VERSION"
-  npm version $VERSION --message "[release] $VERSION"
 
   # publish
+  npm publish --access public
+
+  # push
   # git push origin refs/tags/v$VERSION
   git push origin master
-  npm publish --access public
 fi
